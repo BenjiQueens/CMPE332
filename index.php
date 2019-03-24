@@ -112,6 +112,14 @@ try {
         </form>
       </div>
 
+      <!-- Add Attendees F9 -->
+      <div>
+        <h2> Get Money Breakdown </h2>
+          <form action="money.php" method="post">
+              <input type="submit" value="Get Attendees">
+          </form>
+      </div>
+
 
     <br><br><br><br><br><br>
     <div id="footer"><a href="https://www.linkedin.com/in/benji-christie-065224113/" target="_blank" >web page creator </a></div>
