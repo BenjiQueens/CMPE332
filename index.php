@@ -116,8 +116,42 @@ try {
       <div>
         <h2> Get Money Breakdown </h2>
           <form action="money.php" method="post">
-              <input type="submit" value="Get Attendees">
+              <input type="submit" value="Get Breakdown">
           </form>
+      </div>
+
+      <!-- Add spons F9 -->
+      <div>
+        <h2> Add Sponsor </h2>
+        <form action="addSpons.php" method="post">
+          <p>Company Name <input type="text" name="CompName">
+          <p>Sponsorship Level <select name="spons">
+                        <option value="Platinum">Platinum</option>
+                        <option value="Gold">Gold</option>
+                        <option value="Silver">Silver</option>
+                        <option value="Bronze">Bronze</option>
+                        </select>
+          <br><br><input type="submit" value="Add Sponsor">
+        </form>
+      </div>
+
+
+      <!-- Delete Company -->
+      <div>
+        <h2> Delete Sponsor </h2>
+        <form action="jobsearch.php" method="post">
+          <select name="companyjob">
+            <?php
+              $pdo= new PDO('mysql:host=localhost;dbname=ProjectP2', "root", "");
+              $dates = "SELECT company_name FROM sponsor";
+              $stmt = $pdo->query($dates);
+              while($row = $stmt->fetch()){
+                echo "<option value='".$row['company_name']."'>".$row['company_name']."</option>";
+              }
+            ?>
+          </select>
+          <input type="submit" value="Delete Sponsor">
+        </form>
       </div>
 
 
