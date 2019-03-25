@@ -16,6 +16,7 @@
   $query = 'INSERT INTO sessions
             VALUES (?,?,?,?, NULL)';
   $stmt = $pdo->prepare($query)->execute([$name,$loc,$date,$time]);
+  header("Location: http://localhost/index.php");
   ?>
 </table>
 </body>
