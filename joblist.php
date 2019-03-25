@@ -14,6 +14,7 @@
   {
       echo "<tr><td>".$row["company_name"]."</td><td>".$row["job_title"]."</td><td>".$row["province"]."</td></tr>";
   }
+
   ?>
 </table>
 </body>
