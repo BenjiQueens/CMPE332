@@ -29,14 +29,14 @@
     }
 
     switch($type){
-      case "sponsor":
+      case "Sponsor":
           $payment=0;
           break;
-      case "student":
+      case "Student":
           $payment = 50;
           $room = 17;
           break;
-      case "professional":
+      case "Professional":
           $payment = 100;
           break;
       default:
@@ -72,7 +72,7 @@
     }catch (Exception $e){
       echo "<p><p>adding unsuccesful";
     }
-    if($type == "student"){
+    if($type == "Student"){
       $sql =  'INSERT INTO student VALUES (?,?)';
       $sql1 = 'SELECT room_number FROM student';
       $stmt = $pdo->prepare($sql);

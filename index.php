@@ -52,7 +52,7 @@ try {
           <select name="date">
             <?php
               $pdo= new PDO('mysql:host=localhost;dbname=ProjectP2', "root", "");
-              $dates = "SELECT sess_date FROM sessions";
+              $dates = "SELECT DISTINCT sess_date FROM sessions ORDER BY sess_date";
               $stmt = $pdo->query($dates);
               while($row = $stmt->fetch()){
                 echo "<option value='".$row['sess_date']."'>".$row['sess_date']."</option>";
@@ -107,7 +107,11 @@ try {
         <h2> Add Attendee </h2>
         <form action="addAttendee.php" method="post">
           <p>Name:  <input type="text" name="name">
-          <p>Attendee Type:  <input type="text" name="type">
+          <p> Attendee Type: <select name="type">
+                        <option value="Sponsor">Sponsor</option>
+                        <option value="Student">Student</option>
+                        <option value="Professional">Professional</option>
+                        </select>
           <br><br><input type="submit" value="Add Attendee">
         </form>
       </div>
@@ -153,5 +157,24 @@ try {
           <input type="submit" value="Delete Sponsor">
         </form>
       </div>
+
+      <!-- Switch Session -->
+      <div>
+        <h2> Switch Session Times and Locations </h2>
+        <form action="switch.php" method="post">
+          <select name="session">
+            <?php
+              $pdo= new PDO('mysql:host=localhost;dbname=ProjectP2', "root", "");
+              $dates = "SELECT sess_name FROM sessions";
+              $stmt = $pdo->query($dates);
+              while($row = $stmt->fetch()){
+                echo "<option value='".$row['sess_name']."'>".$row['sess_name']."</option>";
+              }
+            ?>
+          </select>
+          <input type="submit" value="Switch Schedule">
+        </form>
+      </div>
+      <br><br><br><br><br><br>
 </body>
 </html>
