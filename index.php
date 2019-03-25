@@ -139,8 +139,8 @@ try {
       <!-- Delete Company -->
       <div>
         <h2> Delete Sponsor </h2>
-        <form action="jobsearch.php" method="post">
-          <select name="companyjob">
+        <form action="DeleteSpons.php" method="post">
+          <select name="companydel">
             <?php
               $pdo= new PDO('mysql:host=localhost;dbname=ProjectP2', "root", "");
               $dates = "SELECT company_name FROM sponsor";
@@ -153,10 +153,5 @@ try {
           <input type="submit" value="Delete Sponsor">
         </form>
       </div>
-
-
-    <br><br><br><br><br><br>
-    <div id="footer"><a href="https://www.linkedin.com/in/benji-christie-065224113/" target="_blank" >web page creator </a></div>
-    <div id="footer"><a href="https://www.linkedin.com/in/-michaelmackenzie/" target="_blank" >web page designer </a></div>
 </body>
 </html>
